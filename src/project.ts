@@ -1,9 +1,9 @@
 import { makeProject } from "@motion-canvas/core";
 
-import example from "./scenes/example?scene";
-import scene1 from "./scenes/scene1?scene";
-import scene2 from "./scenes/scene2?scene";
+import intro from "./scenes/intro?scene";
+import scene1 from "./scenes/scene1-why?scene";
+import scene2 from "./scenes/scene2-how?scene";
 
 export default makeProject({
-  scenes: [scene1, scene2],
+  scenes: [intro, scene1, scene2],
 });
