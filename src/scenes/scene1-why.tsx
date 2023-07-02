@@ -6,11 +6,14 @@ import {
   waitFor,
   Direction,
   waitUntil,
+  DEFAULT,
 } from "@motion-canvas/core";
 import {
   CodeBlock,
   edit,
   insert,
+  lines,
+  word,
 } from "@motion-canvas/2d/lib/components/CodeBlock";
 
 const baseIndentation = "    ";
@@ -35,7 +38,11 @@ export default makeScene2D(function* (view) {
 
   yield* slideTransition(Direction.Bottom);
 
+  yield* waitUntil("highlight-numbers");
+  yield codeRef().selection(word(0, 14, 9));
+
   yield* waitUntil("add-map");
+  yield codeRef().selection(DEFAULT);
   yield* codeRef().edit(
     2,
     false
@@ -43,17 +50,18 @@ export default makeScene2D(function* (view) {
   `;
 
   yield* waitUntil("input-type");
-  yield* codeRef().edit(2, false)`
+  yield* codeRef().edit(2, true)`
   const input${insert(": number[]")} = [1, 2, 3];
   const output = input.map((n) => n % 2 === 0);
   `;
 
   yield* waitUntil("output-type");
-  yield* codeRef().edit(2, false)`
+  yield* codeRef().edit(2, true)`
   const input: number[] = [1, 2, 3];
   const output${insert(": boolean[]")} = input.map((n) => n % 2 === 0);
   `;
 
+  yield codeRef().selection(DEFAULT);
   yield* waitUntil("reformat");
   yield* codeRef().edit(3, false)`
   const input: number[] = [1, 2, 3];
@@ -63,7 +71,7 @@ export default makeScene2D(function* (view) {
   `;
 
   yield* waitUntil("fn-param-type");
-  yield* codeRef().edit(2, false)`
+  yield* codeRef().edit(2, true)`
   const input: number[] = [1, 2, 3];
   const output: boolean[] = 
       input.map(
@@ -72,7 +80,7 @@ export default makeScene2D(function* (view) {
   `;
 
   yield* waitUntil("fn-return-type");
-  yield* codeRef().edit(2, false)`
+  yield* codeRef().edit(2, true)`
   const input: number[] = [1, 2, 3];
   const output: boolean[] = 
       input.map(
@@ -81,7 +89,7 @@ export default makeScene2D(function* (view) {
   `;
 
   yield* waitUntil("strings-example");
-  yield* codeRef().edit(1, false)`
+  yield* codeRef().edit(1, true)`
   const input: number[] = [1, 2, 3];
   const output: ${edit("boolean", "string")}[] =
       input.map(
@@ -93,7 +101,7 @@ export default makeScene2D(function* (view) {
   `;
 
   yield* waitUntil("array-strings-example");
-  yield* codeRef().edit(1, false)`
+  yield* codeRef().edit(1, true)`
   const input: number[] = [1, 2, 3];
   const output: string[]${insert("[]")} =
       input.map(
@@ -104,7 +112,7 @@ export default makeScene2D(function* (view) {
   `;
 
   yield* waitUntil("object-example");
-  yield* codeRef().edit(1, false)`
+  yield* codeRef().edit(1, true)`
   const input: number[] = [1, 2, 3];
   const output: ${edit("string[]", "{ n: number }")}[] =
       input.map(
@@ -114,6 +122,6 @@ export default makeScene2D(function* (view) {
           )} => ${edit("[n.toString()]", "{ n }")}
       );
   `;
-
   yield* waitUntil("scene-1-over");
+  yield codeRef().selection(DEFAULT);
 });

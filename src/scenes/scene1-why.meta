@@ -2,44 +2,48 @@
   "version": 0,
   "timeEvents": [
     {
+      "name": "highlight-numbers",
+      "targetTime": 0.8778752495405087
+    },
+    {
       "name": "add-map",
-      "targetTime": 2.0610086437836537
+      "targetTime": 2.3388838933241622
     },
     {
       "name": "input-type",
-      "targetTime": 5.626022896734578
+      "targetTime": 5.903898146275087
     },
     {
       "name": "output-type",
-      "targetTime": 7.626022896734578
+      "targetTime": 7.903898146275087
     },
     {
       "name": "reformat",
-      "targetTime": 9.626022896734579
+      "targetTime": 9.903898146275086
     },
     {
       "name": "fn-param-type",
-      "targetTime": 13.19234424832649
+      "targetTime": 13.470219497866998
     },
     {
       "name": "fn-return-type",
-      "targetTime": 15.19234424832649
+      "targetTime": 15.470219497866998
     },
     {
       "name": "strings-example",
-      "targetTime": 20.303517160819293
+      "targetTime": 20.5813924103598
     },
     {
       "name": "array-strings-example",
-      "targetTime": 21.662426984911686
+      "targetTime": 21.619006832159062
     },
     {
       "name": "object-example",
-      "targetTime": 22.73850290786837
+      "targetTime": 22.619006832159062
     },
     {
       "name": "scene-1-over",
-      "targetTime": 40.2378006901052
+      "targetTime": 40.118304614395896
     }
   ],
   "seed": 3174701614
