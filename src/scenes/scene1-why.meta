@@ -1,5 +1,46 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "add-map",
+      "targetTime": 2.0610086437836537
+    },
+    {
+      "name": "input-type",
+      "targetTime": 5.626022896734578
+    },
+    {
+      "name": "output-type",
+      "targetTime": 7.626022896734578
+    },
+    {
+      "name": "reformat",
+      "targetTime": 9.626022896734579
+    },
+    {
+      "name": "fn-param-type",
+      "targetTime": 13.19234424832649
+    },
+    {
+      "name": "fn-return-type",
+      "targetTime": 15.19234424832649
+    },
+    {
+      "name": "strings-example",
+      "targetTime": 20.303517160819293
+    },
+    {
+      "name": "array-strings-example",
+      "targetTime": 21.662426984911686
+    },
+    {
+      "name": "object-example",
+      "targetTime": 22.73850290786837
+    },
+    {
+      "name": "scene-1-over",
+      "targetTime": 40.2378006901052
+    }
+  ],
   "seed": 3174701614
 }

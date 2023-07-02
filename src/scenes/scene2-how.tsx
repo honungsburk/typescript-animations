@@ -5,6 +5,7 @@ import {
   slideTransition,
   waitFor,
   Direction,
+  waitUntil,
 } from "@motion-canvas/core";
 import {
   CodeBlock,
@@ -31,16 +32,20 @@ export default makeScene2D(function* (view) {
 
   yield* slideTransition(Direction.Bottom);
 
-  // yield* codeRef().edit(2, false)`${insert("function map(fn, array) {}")}`;
+  yield* waitUntil("any-types");
 
   yield* codeRef().edit(
     2,
     false
   )`function map(fn${insert(": any")}, array${insert(": any")})${insert(": any")} {${insert("\n\n")}}`;
 
-  yield* codeRef().edit(2, false)`function map(fn: any, array: any): any {
+  yield* waitUntil("for-loop");
+
+  yield* codeRef().edit(1, false)`function map(fn: any, array: any): any {
   ${insert("for (let item of array) {\n  \n  }")}
 }`;
+
+  yield* waitUntil("new-array");
 
   yield* codeRef().edit(
     2,
@@ -51,21 +56,23 @@ export default makeScene2D(function* (view) {
   }
 }`;
 
-  yield* codeRef().edit(2, false)`function map(fn: any, array: any): any
+  yield* waitUntil("apply-fn");
+  yield* codeRef().edit(1, false)`function map(fn: any, array: any): any
   const newArray: any[] = [];
   for (let item of array) {
     ${insert("const newItem: any = fn(item);")}
   }
 }`;
-
-  yield* codeRef().edit(2, false)`function map(fn: any, array: any): any
+  yield* waitUntil("append-item");
+  yield* codeRef().edit(1, false)`function map(fn: any, array: any): any
   const newArray: any[] = [];
   for (let item of array) {
     const newItem: any = fn(item);${insert("\n    newArray.push(newItem);")}
   }
 }`;
 
-  yield* codeRef().edit(2, false)`function map(fn: any, array: any): any
+  yield* waitUntil("return-new-array");
+  yield* codeRef().edit(1, false)`function map(fn: any, array: any): any
   const newArray: any[] = [];
   for (let item of array) {
     const newItem: any = fn(item);
@@ -73,6 +80,7 @@ export default makeScene2D(function* (view) {
   }${insert("\n  return newArray;")}
 }`;
 
+  yield* waitUntil("fn-arg-type");
   yield* codeRef().edit(
     2,
     false
@@ -84,7 +92,7 @@ export default makeScene2D(function* (view) {
   }
   return newArray;
 }`;
-
+  yield* waitUntil("array-arg-type");
   yield* codeRef().edit(
     2,
     false
@@ -96,7 +104,7 @@ export default makeScene2D(function* (view) {
   }
   return newArray;
 }`;
-
+  yield* waitUntil("array-return-type");
   yield* codeRef().edit(
     2,
     false
@@ -108,7 +116,7 @@ export default makeScene2D(function* (view) {
   }
   return newArray;
 }`;
-
+  yield* waitUntil("a-generic");
   yield* codeRef().edit(
     2,
     false
@@ -120,7 +128,7 @@ export default makeScene2D(function* (view) {
   }
   return newArray;
 }`;
-
+  yield* waitUntil("b-generic");
   yield* codeRef().edit(
     2,
     false
@@ -132,7 +140,7 @@ export default makeScene2D(function* (view) {
   }
   return newArray;
 }`;
-
+  yield* waitUntil("generics");
   yield* codeRef().edit(
     2,
     false
@@ -146,5 +154,5 @@ export default makeScene2D(function* (view) {
 }`;
 
   // proceed with the animation
-  yield* waitFor(3);
+  yield* waitUntil("scene-2-over");
 });

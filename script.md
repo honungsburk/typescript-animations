@@ -124,28 +124,28 @@ function map<A, B>(fn: (x: A) => B, array: A[]): B[] {
 
 What are generics?
 
-Imagine you have an array of numbers and you use the `map` method to turn it into an array of booleans
-
-So, we go from an array of numbers to an array of booleans
+Imagine you have an array of numbers and you use one of my favorite methods: the `map` method. to turn it from an array of numbers into an array of booleans
 
 let's reformat a bit.
 
 As you have probably figured out the function takes numbers and outputs booleans
 
-But we don't have to return booleans, we could return strings, or a list of strings, or even an object. The `map` method can return different types depending on its inputs. This is the power of generics
+But we don't have to return booleans, we could return strings, a list of strings, or even an entire object. The `map` method can return different types depending on its inputs. This is the power of generics. Letting the caller of the method decide the type.
 
-Let's write our own version of `map`.
-And to start with, we set all types to any, so we can focus on writing the body of the function.
+But how does it work?
+
+Let's write our own version.
+We will set all types to any for now, so we can focus on writing the body of the function.
 
 We want to loop through each item in the array, applying it to
-the function and appending it to our new list. And when we are done, return it.
+the function and appending it to our new list. And when we are done, return said list.
 
 So let's think a bit. This function takes one argument so it should look something like this. We know that the array is an array, so let's add that as well. Same is true for the return type.
 
-But we also know that the argument to the function must be of the same type as whatever the array contains. So what ever these two any's should be, they must be the same.
+But we also know that the argument to the function must be of the same type as whatever the array contains. So whatever these two any's should be, they must be the same.
 
 By the same logic the return type of the function must match contents or the returned array.
 
-Finally, we declare our two generics: A and B.
+Finally, we declare our two generics: A and B. And there you go: a function mapping an array from one type to another.
 
 Happy coding.

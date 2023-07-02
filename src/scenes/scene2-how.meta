@@ -1,5 +1,58 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "any-types",
+      "targetTime": 2.316350435442471
+    },
+    {
+      "name": "for-loop",
+      "targetTime": 7.8886706385935845
+    },
+    {
+      "name": "new-array",
+      "targetTime": 8.888670638593585
+    },
+    {
+      "name": "apply-fn",
+      "targetTime": 10.888670638593585
+    },
+    {
+      "name": "append-item",
+      "targetTime": 11.888670638593585
+    },
+    {
+      "name": "return-new-array",
+      "targetTime": 14.854411515256952
+    },
+    {
+      "name": "fn-arg-type",
+      "targetTime": 22.993154698929178
+    },
+    {
+      "name": "array-arg-type",
+      "targetTime": 27.60552086396865
+    },
+    {
+      "name": "array-return-type",
+      "targetTime": 29.60552086396865
+    },
+    {
+      "name": "a-generic",
+      "targetTime": 40.65827490123415
+    },
+    {
+      "name": "b-generic",
+      "targetTime": 50.28845330407221
+    },
+    {
+      "name": "generics",
+      "targetTime": 54.07313909999027
+    },
+    {
+      "name": "scene-2-over",
+      "targetTime": 64.12548274669597
+    }
+  ],
   "seed": 2465917943
 }

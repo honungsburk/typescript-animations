@@ -1,5 +1,10 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "intro-over",
+      "targetTime": 1.6732100531497225
+    }
+  ],
   "seed": 1534447179
 }
