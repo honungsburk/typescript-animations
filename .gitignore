@@ -4,7 +4,7 @@ output
 dist
 
 audio/*
-
+test.ts
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
